@@ -12,25 +12,24 @@ class Wisudawan extends BaseController
 
   public function __construct()
   {
-    session();
     $this->wisuda = new WisudawanModel();
   }
 
   public function index()
   {
-    $data = ['wisudawan' => $this->wisuda->findAll(), 'validation' => Services::validation()];
-    return view('wisudawan/index', $data);
+    return view('wisudawan/index');
   }
 
-  public function upload_excel()
+  public function slides()
   {
-    session();
+    $data = ['wisudawan' => $this->wisuda->findAll(), 'validation' => Services::validation()];
+    return view('wisudawan/slides', $data);
+  }
+
+  public function uploadExcel()
+  {
     // Handle if request method is GET
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-      return view('wisudawan/upload_excel');
-    }
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-      $data = ['validation' => Services::validation()];
       return view('wisudawan/upload_excel');
     }
     // Handle if file mime_in is excel
@@ -47,6 +46,6 @@ class Wisudawan extends BaseController
       $new_data = ['npm' => $row[0], 'nama' => $row[1]];
       $this->wisuda->insert($new_data);
     }
-    return redirect()->to(base_url());
+    return redirect()->to(base_url('/slides'));
   }
 }
