@@ -24,8 +24,19 @@ class Wisudawan extends BaseController
 
   public function upload_excel()
   {
+    session();
+    // Handle if request method is GET
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+      return view('wisudawan/upload_excel');
+    }
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+      $data = ['validation' => Services::validation()];
+      return view('wisudawan/upload_excel');
+    }
+    // Handle if file mime_in is excel
     if (!$this->validate(['excel-file' => 'uploaded[excel-file]|mime_in[excel-file,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet]'])) {
-      return redirect()->to(base_url())->withInput();
+      $this->session->set_flashdata('error', true);
+      return redirect()->to(base_url('/wisudawan/upload_excel'))->withInput();
     }
     $excel_file = $this->request->getFile('excel-file');
     $reader = new Xlsx();
