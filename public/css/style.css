@@ -32,6 +32,11 @@ body {
     background-image: url("/img/background.png");
   }
 }
+@media (min-width: 300px) {
+  .carousel {
+    background-color: #800000;
+  }
+}
 /* Slider Carousel */
 .carousel {
   display: flex;
