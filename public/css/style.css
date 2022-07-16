@@ -1,27 +1,48 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 
 body {
+  font-family: "Quicksand", sans-serif;
   margin: 0;
+  height: 100vh;
 }
 
-h1,
-h2 {
-  font-family: "Montserrat", sans-serif;
+.nama {
+  font-size: 48px;
+  font-weight: bold;
 }
 
+.npm {
+  font-size: 36px;
+  font-weight: lighter;
+}
+
+.fakultas {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.predikat {
+  font-size: 48px;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+@media (min-width: 992px) {
+  .carousel {
+    background-image: url("/img/background.png");
+  }
+}
 /* Slider Carousel */
 .carousel {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   color: white;
-  background-color: #800000;
-  background-position: center;
-  background-size: 80%;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Circle Animation */
@@ -124,7 +145,7 @@ h2 {
   0% {
     transform: translateY(0) rotate(0deg);
     opacity: 1;
-    border-radius: 0;
+    border-radius: 50%;
   }
 
   100% {
@@ -144,7 +165,7 @@ h2 {
   position: fixed;
   right: -50%;
   top: 0;
-  z-index: -1;
+  z-index: 999;
 }
 .home2 {
   animation-direction: alternate-reverse;
@@ -165,14 +186,8 @@ h2 {
 }
 
 .content {
-  background-color: rgba(248, 255, 245, 0.435);
-  border-radius: 0.25em;
-  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.25);
-  box-sizing: border-box;
-  left: 50%;
-  padding: 10vmin;
-  position: fixed;
-  text-align: center;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  background-image: url("/img/graduation-index.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
 }
