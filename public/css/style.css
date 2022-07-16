@@ -7,7 +7,8 @@ body {
 }
 
 .nama {
-  font-size: 48px;
+  margin-top: 20px;
+  font-size: 42px;
   font-weight: bold;
 }
 
@@ -22,6 +23,18 @@ body {
 }
 
 .predikat {
+  font-size: 46px;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.prodi {
+  font-size: 64px;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.wisudawan {
   font-size: 48px;
   font-weight: bold;
   color: #ffd700;
@@ -31,10 +44,16 @@ body {
   .carousel {
     background-image: url("/img/background.png");
   }
+  .terbaik {
+    height: 60vh;
+  }
 }
-@media (min-width: 300px) {
+@media (max-width: 556px) {
   .carousel {
     background-color: #800000;
+  }
+  .wisudawan {
+    margin-top: 50%;
   }
 }
 /* Slider Carousel */
@@ -43,11 +62,19 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 100%;
   height: 100%;
   color: white;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.terbaik {
+  background: linear-gradient(
+    -180deg,
+    rgba(128, 0, 0, 1) 0%,
+    rgba(51, 0, 0, 1) 80%
+  );
+  background-blend-mode: soft-light;
 }
 
 /* Circle Animation */

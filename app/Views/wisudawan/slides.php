@@ -6,10 +6,10 @@
   <div class="carousel-inner">
     <?php foreach ($wisudawan as $i => $row) : ?>
       <?php if ($i === 0) : ?>
-        <div class="carousel-item active">
-          <h2 class="npm">Lulusan</h2>
+        <div class="carousel-item active text-start mx-5">
+          <h2 class="fw-normal fs-2">Lulusan</h2>
           <h2 class="predikat">Program Studi</h2>
-          <h2 class="fakultas"><?= $row['fakultas_saja'] ?></h2>
+          <h2 class="prodi"><?= $row['fakultas_saja'] ?></h2>
           <h2 class="fakultas"><?= $row['fakultas'] ?></h2>
         </div>
         <?php break; ?>
@@ -18,13 +18,22 @@
     <?php foreach ($wisudawan as $i => $row) : ?>
       <?php if ($i === 0) : ?>
         <div class="carousel-item">
-          <h1 class="predikat">WISUDAWAN TERBAIK</h1>
-          <h1 class="nama"><?= $row['nama'] ?></h1>
-          <h2 class="npm"><?= $row['npm'] ?></h2>
-          <img src="/img/wisudawan/<?= $row['npm'] ?>.jpg" height="350vh">
-          <h2 class="npm"><?= $row['ipk'] ?></h2>
-          <h2 class="fakultas"><?= $row['fakultas_saja'] ?></h2>
-          <h2 class="predikat"><?= $row['predikat_kelulusan'] ?></h2>
+          <h1 class="wisudawan">WISUDAWAN TERBAIK</h1>
+          <div class="container rounded terbaik">
+            <div class="row justify-content-center text-start">
+              <div class="col-sm-3 my-3">
+                <img src="/img/wisudawan/<?= $row['npm'] ?>.jpg" height="400vh" class="rounded">
+              </div>
+              <div class="col-sm-7 my-3">
+                <h2 class="nama"><?= $row['nama'] ?></h2>
+                <h2 class="fakultas"><?= $row['fakultas'] ?></h2>
+                <h2 class="fakultas"><?= $row['fakultas_saja'] ?></h2>
+                <h2 class="fakultas"><?= $row['prodi_sk_kelulusan'] ?></h2>
+                <h2 class="light"><?= $row['ipk'] ?></h2>
+                <h2 class="predikat"><?= $row['predikat_kelulusan'] ?></h2>
+              </div>
+            </div>
+          </div>
         </div>
         <?php break; ?>
       <?php endif; ?>
@@ -34,7 +43,7 @@
       <div class="carousel-item">
         <h1 class="nama"><?= $row['nama'] ?></h1>
         <h2 class="npm"><?= $row['npm'] ?></h2>
-        <img src="/img/wisudawan/<?= $row['npm'] ?>.jpg" height="350vh">
+        <img src="/img/wisudawan/<?= $row['npm'] ?>.jpg" height="350vh" class="rounded">
         <h2 class="fakultas"><?= $row['fakultas_saja'] ?></h2>
         <h2 class="predikat"><?= $row['predikat_kelulusan'] ?></h2>
       </div>
