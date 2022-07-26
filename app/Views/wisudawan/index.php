@@ -17,7 +17,7 @@
 </ul>
 <script>
   document.addEventListener(('click'), () => {
-    window.location.href = '<?= base_url('/slides/s2_ilmu_hukum') ?>'
+    window.location.href = '<?= base_url('/wisudawan-terbaik') ?>'
   })
 </script>
 <?= $this->endSection(); ?>

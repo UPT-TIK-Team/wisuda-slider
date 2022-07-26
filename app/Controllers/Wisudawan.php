@@ -92,6 +92,19 @@ class Wisudawan extends BaseController
     return view('wisudawan/index');
   }
 
+  public function wisudawanTerbaik()
+  {
+    $db = \Config\Database::connect();
+    $data = ['wisudawan' => []];
+    $url = ['s2_hukum', 's1_hukum', 's2_manajemen', 's1_manajemen', 's1_akuntansi', 'd3_akuntansi', 's1_pendidikan_luar_sekolah', 's1_pendidikan_matematika', 's1_bahasa_inggris', 's1_pjkr', 's1_pendidikan_bahasa_indonesia', 's1_agroteknologi', 's1_agribisnis', 's2_pai', 's1_mpi', 's1_piaud', 's1_teknik_industri', 's1_teknik_mesin', 's1_teknik_elektro', 's1_teknik_informatika', 's1_ilmu_pemerintahan', 's1_ilmu_komunikasi', 'd3_kebidanan'];
+    for ($i = 0; $i < 23; $i++) {
+      $query = $db->query("SELECT * FROM $url[$i]");
+      $result = $query->getRowArray();
+      array_push($data['wisudawan'], $result);
+    }
+    return view('wisudawan/terbaik', $data);
+  }
+
   public function perProdi()
   {
     $path = explode('/', $this->request->getPath())[1];

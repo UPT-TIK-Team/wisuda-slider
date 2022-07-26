@@ -36,6 +36,7 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Wisudawan::index');
+$routes->get('/wisudawan-terbaik', 'Wisudawan::wisudawanTerbaik');
 $routes->get('/slides/(:segment)', 'Wisudawan::perProdi');
 $routes->get('/upload-excel', 'Wisudawan::uploadExcel');
 $routes->post('/upload-excel', 'Wisudawan::uploadExcel');

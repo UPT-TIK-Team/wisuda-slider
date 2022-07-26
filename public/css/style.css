@@ -41,9 +41,14 @@ body {
 }
 
 @media (min-width: 992px) {
-  .carousel {
-    background-image: url("/img/background.png");
+  .wisudawan-biasa {
+    background-image: url("/img/wisudawan-biasa-background.png");
   }
+
+  .wisudawan-terbaik {
+    background-image: url("/img/wisudawan-terbaik-background.png");
+  }
+
   .terbaik {
     height: 60vh;
   }
@@ -53,7 +58,11 @@ body {
     background-color: #800000;
   }
   .wisudawan {
-    margin-top: 50%;
+    margin-top: 300px;
+  }
+
+  .foto {
+    height: 250px !important;
   }
 }
 /* Slider Carousel */
@@ -72,9 +81,8 @@ body {
   background: linear-gradient(
     -180deg,
     rgba(128, 0, 0, 1) 0%,
-    rgba(51, 0, 0, 1) 80%
+    rgba(51, 0, 0, 1) 50%
   );
-  background-blend-mode: soft-light;
 }
 
 /* Circle Animation */
@@ -219,7 +227,17 @@ body {
 
 .content {
   background-image: url("/img/graduation-index.png");
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
+}
+
+#carouselButton {
+  opacity: 0.5;
+  color: #800000 !important;
+  margin-left: 45%;
+  position: fixed;
+  bottom: 0px;
+  z-index: 999;
 }
